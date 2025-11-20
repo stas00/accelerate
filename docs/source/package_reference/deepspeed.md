@@ -17,15 +17,21 @@ rendered properly in your Markdown viewer.
 
 ## DeepSpeedPlugin
 
+[[autodoc]] utils.DeepSpeedPlugin
+
 ## get_active_deepspeed_plugin
 
 [[autodoc]] utils.get_active_deepspeed_plugin
 
-[[autodoc]] utils.DeepSpeedPlugin
+## map_pytorch_optim_to_deepspeed
 
-[[autodoc]] utils.deepspeed.DummyScheduler
+[[autodoc]] utils.deepspeed.map_pytorch_optim_to_deepspeed
 
-## DeepSpeedEnginerWrapper
+## HfDeepSpeedConfig
+
+[[autodoc]] utils.deepspeed.HfDeepSpeedConfig
+
+## DeepSpeedEngineWrapper
 
 [[autodoc]] utils.deepspeed.DeepSpeedEngineWrapper
 
@@ -42,3 +48,9 @@ rendered properly in your Markdown viewer.
 [[autodoc]] utils.deepspeed.DummyOptim
 
 ## DummyScheduler
+
+[[autodoc]] utils.deepspeed.DummyScheduler
+
+## DeepSpeedContextParallelConfig
+
+[[autodoc]] utils.dataclasses.DeepSpeedContextParallelConfig

@@ -381,6 +381,18 @@ You can use the features of ZeRO++ by using the appropriate config parameters. N
 
 For hierarchical partitioning, the partition size `zero_hpz_partition_size` should ideally be set to the number of GPUs per node. (For example, the above config file assumes 8 GPUs per node)
 
+**Context Parallelism (ALST/Ulysses Sequence Parallelism)**
+
+DeepSpeed supports context parallelism through the ALST/Ulysses sequence parallelism feature, which enables training with very long sequences by distributing attention computation across GPUs using attention head parallelism. This allows you to scale to much longer sequence lengths than would fit on a single GPU.
+
+Key benefits:
+- Train with sequences up to 500K tokens on a single H100 GPU
+- Scale to millions of tokens across multiple GPUs
+- Compatible with DeepSpeed ZeRO Stage 2 and 3
+- Can be combined with data parallelism for 2D parallelism
+
+For detailed information on configuring and using context parallelism with DeepSpeed, including code examples and usage patterns, see the [Context Parallelism guide](../concept_guides/context_parallelism#deepspeedalstulyssessp-backend).
+
 **Important code changes when using DeepSpeed Config File**
 
 1. DeepSpeed Optimizers and Schedulers. For more information on these,

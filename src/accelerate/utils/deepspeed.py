@@ -101,6 +101,13 @@ def get_active_deepspeed_plugin(state):
     """
     Returns the currently active DeepSpeedPlugin.
 
+    Args:
+        state (`AcceleratorState`):
+            The current accelerator state containing the DeepSpeed plugin configuration.
+
+    Returns:
+        `DeepSpeedPlugin`: The currently active DeepSpeedPlugin instance.
+
     Raises:
         ValueError: If DeepSpeed was not enabled and this function is called.
     """

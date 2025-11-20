@@ -46,6 +46,10 @@ These are standalone dataclasses used for checks, such as the type of distribute
 
 [[autodoc]] utils.ComputeEnvironment
 
+[[autodoc]] utils.CustomDtype
+
+[[autodoc]] utils.DDPCommunicationHookType
+
 [[autodoc]] utils.DistributedType
 
 [[autodoc]] utils.DynamoBackend
@@ -58,9 +62,13 @@ These are standalone dataclasses used for checks, such as the type of distribute
 
 [[autodoc]] utils.SageMakerDistributedType
 
+[[autodoc]] utils.TensorInformation
+
 ### Kwargs
 
 These are configurable arguments for specific interactions throughout the PyTorch ecosystem that Accelerate handles under the hood.
+
+[[autodoc]] utils.AORecipeKwargs
 
 [[autodoc]] utils.AutocastKwargs
 
@@ -74,9 +82,15 @@ These are configurable arguments for specific interactions throughout the PyTorc
 
 [[autodoc]] utils.KwargsHandler
 
+[[autodoc]] utils.MSAMPRecipeKwargs
+
+[[autodoc]] utils.ProfileKwargs
+
+[[autodoc]] utils.TERecipeKwargs
+
 ## Plugins
 
-These are plugins that can be passed to the [`Accelerator`] object. While they are defined elsewhere in the documentation, 
+These are plugins that can be passed to the [`Accelerator`] object. While they are defined elsewhere in the documentation,
 for convenience all of them are available to see here:
 
 [[autodoc]] utils.DeepSpeedPlugin
@@ -89,6 +103,8 @@ for convenience all of them are available to see here:
 
 [[autodoc]] utils.TorchDynamoPlugin
 
+[[autodoc]] utils.TorchTensorParallelPlugin
+
 ## Configurations
 
 These are classes which can be configured and passed through to the appropriate integration
@@ -97,7 +113,13 @@ These are classes which can be configured and passed through to the appropriate 
 
 [[autodoc]] utils.DataLoaderConfiguration
 
+[[autodoc]] utils.ParallelismConfig
+
 [[autodoc]] utils.ProjectConfiguration
+
+[[autodoc]] utils.TorchContextParallelConfig
+
+[[autodoc]] utils.TorchTensorParallelConfig
 
 ## Environmental Variables
 
@@ -125,10 +147,6 @@ These include data operations that mimic the same `torch` ops but can be used on
 [[autodoc]] utils.gather
 
 [[autodoc]] utils.gather_object
-
-[[autodoc]] utils.get_grad_scaler
-
-[[autodoc]] utils.get_mixed_precision_context_manager
 
 [[autodoc]] utils.listify
 
@@ -182,17 +200,19 @@ When setting up 🤗 Accelerate for the first time, rather than running `acceler
 
 ## Modeling
 
-These utilities relate to interacting with PyTorch models
+These utilities relate to interacting with PyTorch models, including helpers that are useful to load checkpoints and manage mixed precision training.
 
 [[autodoc]] utils.calculate_maximum_sizes
 
 [[autodoc]] utils.compute_module_sizes
 
-[[autodoc]] utils.extract_model_from_parallel
-
 [[autodoc]] utils.get_balanced_memory
 
+[[autodoc]] utils.get_grad_scaler
+
 [[autodoc]] utils.get_max_layer_size
+
+[[autodoc]] utils.get_mixed_precision_context_manager
 
 [[autodoc]] utils.infer_auto_device_map
 
@@ -239,12 +259,6 @@ These utilities relate to setting and synchronizing of all the random states.
 These include utilities that are useful while using PyTorch with XLA.
 
 [[autodoc]] utils.install_xla
-
-## Loading model weights
-
-These include utilities that are useful to load checkpoints.
-
-[[autodoc]] utils.load_checkpoint_in_model
 
 ## Quantization
 
